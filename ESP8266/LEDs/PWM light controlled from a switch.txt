@@ -1,0 +1,21 @@
+light:
+  - platform: monochromatic
+    name: "Red LED"
+    output: output_component1
+    id: red_led
+
+output:
+  - platform: esp8266_pwm
+    id: output_component1
+    pin: GPIO14
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO12
+      mode: INPUT_PULLUP
+      inverted: TRUE
+    name: Button
+    on_press: 
+      then:
+        - light.toggle: red_led
