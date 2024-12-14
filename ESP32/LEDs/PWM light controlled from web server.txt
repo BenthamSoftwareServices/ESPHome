@@ -1,0 +1,12 @@
+# Define PWM output for the light
+output:
+  - platform: ledc
+    pin: GPIO5 # Change to the GPIO pin you are using
+    frequency: 1000 Hz
+    id: pwm_output
+
+# Define the light component
+light:
+  - platform: monochromatic
+    name: "ESP32 PWM Light"
+    output: pwm_output
