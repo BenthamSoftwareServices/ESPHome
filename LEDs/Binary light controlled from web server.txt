@@ -1,0 +1,11 @@
+# Define GPIO output for the binary light
+output:
+  - platform: gpio
+    pin: GPIO5 # Change to the GPIO pin you are using
+    id: light_output
+
+# Define the light component
+light:
+  - platform: binary
+    name: "ESP32 Binary Light"
+    output: light_output
