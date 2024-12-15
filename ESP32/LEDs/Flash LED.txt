@@ -1,0 +1,17 @@
+# Define the LED GPIO pin
+output:
+  - platform: gpio
+    pin: GPIO5   # Replace with the GPIO pin connected to your LED
+    id: led_output
+
+# Define the light component
+light:
+  - platform: binary
+    output: led_output
+    id: status_led
+
+# Flash LED using interval
+interval:
+  - interval: 1s # Flash every second
+    then:
+      - light.toggle: status_led
