@@ -1,0 +1,1 @@
+If Home Assistant fails to connect click Machine > Reset from the VirtualBox menu to restart the Home Assistant VM

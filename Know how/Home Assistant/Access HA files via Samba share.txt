@@ -1,0 +1,7 @@
+For setup see: https://www.home-assistant.io/common-tasks/os/#:~:text=ssl-,INSTALLING%20AND%20USING%20THE%20SAMBA%20ADD%2DON,-The%20Samba%20add
+
+To access HA files via Samba share open File Explorer and enter \\homeassistant in the address bar, if asked for credentials use below:
+
+User = homeassistant
+
+Pass = robinho0d

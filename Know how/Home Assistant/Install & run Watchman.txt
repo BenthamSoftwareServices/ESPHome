@@ -1,0 +1,19 @@
+For info see: https://www.youtube.com/watch?v=XKD5vBZLKgE and https://github.com/dummylabs/thewatchman
+
+1: In the Home Assistant web interface click HACS (Home Assistant Community Store) and search for Watchman
+
+2: Download Watchman then restart Home Assistant web interface using SETTINGS > SYSTEM then click the on/off icon at the top right & select RESTART HOME ASSISTANT
+
+3: Go to SETTINGS > DEVICES & SERVICES & select INTEGRATIONS and click the blue + ADD INTEGRATION button
+
+4: Search for and add Watchman and configure if necessary
+
+5: In the Home Assistant web interface click DEVELOPER TOOLS
+
+6: Select ACTIONS then click the drop-down for the list of actions, look for and select the Watchman: Report near the bottom of the list
+
+7: Check the settings and click the blue PERFORM ACTION button
+
+8: In the Home Assistant web interface click Studio Code Server
+
+9: In the File Explorer look for /config/watchman_report.txt near the bottom of the list, not in the watchman section

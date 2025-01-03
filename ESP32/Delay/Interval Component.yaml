@@ -1,0 +1,22 @@
+This component allows you to run actions at fixed time intervals. For example, if you want to toggle a switch every minute, you can use this component. Please note that it’s possible to achieve the same thing with the time.on_time trigger, but this technique is more light-weight and user-friendly.
+
+# Example configuration entry
+interval:
+  - interval: 1min
+    then:
+      - switch.toggle: relay_1
+If a startup delay is configured, the first execution of the actions will not occur before at least that time after boot.
+
+Configuration variables:
+interval (Required, Time): The interval to execute the action with.
+
+startup_delay (Optional, Time): An optional startup delay - defaults to zero.
+
+then (Required, Action): The action to perform.
+
+some_config_option:
+  interval: 1000us  # 1000 microseconds = 1ms
+  interval: 1000ms  # 1000 milliseconds
+  interval: 1.5s  # 1.5 seconds
+  interval: 0.5min  # half a minute
+  interval: 2h  # 2 hours

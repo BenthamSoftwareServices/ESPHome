@@ -7,7 +7,7 @@ light:
 output:
   - platform: esp8266_pwm
     id: output_component1
-    pin: GPIO14
+    pin: GPIO14 # (Or D5 as marked on the ESP8266 module)
 
 binary_sensor:
   - platform: gpio

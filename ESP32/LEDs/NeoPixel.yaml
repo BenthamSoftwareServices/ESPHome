@@ -1,0 +1,53 @@
+Here the light defines theNeoPixel LED and includes multiple effects, which can be controlled from the device's web interface.
+Adding on_boot to the esphome section turns on the NeoPixel and runs the Rainbow Effect 5 seconds after the device boot is complete.
+
+esphome:
+  name: esp32-s3
+  friendly_name: ESP32-S3
+  on_boot: # See: https://esphome.io/components/esphome.html#on-boot
+    #priority: -100 # Lower, or negative numbers cause the on_boot event to happen later in the boot process -100 starts about 6 seconds after boot-up
+    #then: # not necessary if not using priority to delay startup of NeoPixel
+      - delay: 5s # Using a - delay action within the on_boot sequence is a reliable way to ensure that specific actions happen after the system has fully initialized. This approach gives you precise control over timing, independent of the priority mechanism.
+      - light.turn_on:
+         id: my_neopixel_light
+         effect: Rainbow Effect
+
+# Define the light component
+light:
+   - platform: neopixelbus
+    type: GRB
+    variant: ws2812
+    pin: GPIO48  # Replace with your data pin
+    num_leds: 1  # Number of LEDs in your strip
+    name: "NeoPixel Light"
+    default_transition_length: 
+      seconds: 1
+    #restore_mode: ALWAYS_ON
+    id: my_neopixel_light
+    effects:
+      - addressable_rainbow:  # Rainbow effect
+          name: "Rainbow Effect"
+          speed: 10
+          width: 50
+      - addressable_color_wipe: 
+          name: Color Wipe Effect With Custom Values
+          colors:
+            - red: 100%
+              green: 100%
+              blue: 100%
+              num_leds: 5
+              gradient: true
+            - red: 0%
+              green: 0%
+              blue: 0%
+              num_leds: 1
+          add_led_interval: 100ms
+          reverse: false
+      - addressable_flicker:
+            name: Flicker Effect With Custom Values
+            update_interval: 16ms
+            intensity: 5%
+      - addressable_random_twinkle: 
+          name: Random Twinkle Effect With Custom Values
+          twinkle_probability: 5%
+          progress_interval: 32ms

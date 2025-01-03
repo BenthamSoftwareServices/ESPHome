@@ -1,0 +1,19 @@
+# I²C configuration (pins depend on your ESP32 board, default GPIO21 and GPIO22)
+i2c:
+  scl: 22
+  sda: 21
+  scan: False # Set to true if I2C address not known
+  id: bus_a
+  # Set the frequency the I²C bus should operate on. Defaults to 50kHz. Values are 10kHz, 50kHz, 100kHz, 200kHz, … 800kHz
+  frequency: 200kHz # Avoids error message: Component display took a long time for an operation (204 ms). Components should block for at most 30 ms.
+
+display:
+  # LCD Display configuration
+  - platform: lcd_pcf8574
+    dimensions: 16x2
+    address: 0x27  # I2C address (commonly 0x27 or 0x3F; adjust if needed)
+    lambda: |-
+      it.printf(0, 0, "Voltage: %.2fV", id(measured_voltage).state);
+      it.printf(0, 1, "T:%.1fC", id(dht11_temperature).state);
+      it.printf(8, 1, "H:%.1f%%", id(dht11_humidity).state);
+  # For formatting info: https://esphome.io/components/display/#display-engine:~:text=Static%20text%20by%20itself,is%20way%20better%20documented%20%3A)

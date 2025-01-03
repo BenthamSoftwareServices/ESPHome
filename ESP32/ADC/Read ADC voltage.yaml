@@ -1,8 +1,10 @@
-# Read ADC voltage
 sensor:
+# Include all sensor devices in the single sensor: domain
+# Read ADC voltage
   - platform: adc
     pin: GPIO32  # Change this to your ADC pin
     name: "Measured Voltage"
+    id: measured_voltage
     update_interval: 1s
     # On the ESP32 the voltage measured with the ADC caps out at ~1.1V by default as the sensing range (attenuation of the ADC) is set to 0db by default.
     # Measuring higher voltages requires setting attenuation to one of the following values: 0db, 2.5db, 6db, 12db. There’s more information at the manufacturer’s website.

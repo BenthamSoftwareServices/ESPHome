@@ -1,7 +1,7 @@
 # Define the LED GPIO pin
 output:
   - platform: gpio
-    pin: GPIO5   # Replace with the GPIO pin connected to your LED
+    pin: GPIO4   # Replace with the GPIO pin connected to your LED
     id: led_output
 
 # Define the light component

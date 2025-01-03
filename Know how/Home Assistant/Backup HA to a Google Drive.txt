@@ -1,0 +1,27 @@
+For info see: https://www.youtube.com/watch?v=MTlkjVrpo-o
+
+Open Google Drive in a browser not using other Google accounts, as below:
+
+Google drive is:
+
+user = homeassistant.bentham@gmail.com
+
+pass = Robinho0d!
+
+In the Home Assistant web interface click SETTINGS > ADD-ONS then click the blue ADD_ON STORE button, then click the 3 dots at the top right and select REPOSITORIES
+
+Enter the address of the Google Drive Backup: https://github.com/sabeechen/hassio-google-drive-backup and click ADD-ONS
+
+Refresh the web page and scroll to the bottom and locate and install HOME ASSISTANT GOOGLE DRIVE BACKUP
+
+Set start-up options e.g. show in left pane, update et cetera and click START
+
+Then click the OPEN WEB UI button
+
+Right click the AUTHENTICATE WITH GOOGLE DRIVE button and copy the link address
+
+Paste the link address into a new tab in the browser with Google Drive open and copy the code
+
+Go back to the WEB UI and paste in the code to activate
+
+Configure number of backups to save in HA and Google Drive and set backup frequency and time: Configured for every day at 11:00 a.m.

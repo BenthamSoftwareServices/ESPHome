@@ -1,7 +1,7 @@
 # Define GPIO output for the binary light
 output:
   - platform: gpio
-    pin: GPIO5 # Change to the GPIO pin you are using
+    pin: GPIO44 # Change to the GPIO pin you are using
     id: light_output
 
 # Define the light component

@@ -1,0 +1,3 @@
+Sometimes it is necessary to press and hold the boot button to enable ESPHome Web to upload a compiled binary file.
+
+Once an ESPHome binary has been uploaded to an ESP32 subsequent uploads can be via WiFi thus avoiding the problem.

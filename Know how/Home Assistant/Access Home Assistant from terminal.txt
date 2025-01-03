@@ -1,0 +1,21 @@
+1: From SETTINGS > ADD ONS > ADD ON STORE add Advanced SSH & Web Terminal
+
+2: In configuration ad a password and save e.g. robinho0d (VirtualBox) or Robinho0d! (VMWare) note double quotes dissappear on save
+
+3: Under info enable all
+
+4: Click TERMINAL in left pane and then use linux commands such as:
+
+		ls list files and folders
+		cd directory.name changes to that directory
+		cat file.name displays contents as text
+		exit to leave terminal
+		
+		ssh hassio@192.168.1.26 opens an SSH connnection to the Home Assistant virtual machine from where HA commands can be run.
+		
+		HA commands from here: https://www.home-assistant.io/common-tasks/os#home-assistant-via-the-command-line:~:text=of%20system%201.-,Home%20Assistant%20via%20the%20command%20line,-On%20the%20SSH
+				
+		ha --help lists all commands
+
+		exit closes the SSH connection
+		

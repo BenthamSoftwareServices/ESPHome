@@ -1,7 +1,8 @@
 # Define PWM output for the light
 output:
   - platform: ledc
-    pin: GPIO5 # Change to the GPIO pin you are using
+    pin: GPIO14 # Change to the GPIO pin you are using
+    max_power: 2% # Maximum power possible, even though the device web interface has 0 to 100% on the slider e.g. 2% max and 50% on the slider results in 1%
     frequency: 1000 Hz
     id: pwm_output
 
@@ -9,4 +10,7 @@ output:
 light:
   - platform: monochromatic
     name: "ESP32 PWM Light"
-    output: pwm_output
+    output: pwm_output # links these settings with the id: field in the ledc output device
+    default_transition_length: 
+      seconds: 1
+    restore_mode: ALWAYS_ON

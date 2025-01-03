@@ -1,0 +1,1 @@
+The basic editor within ESPHome Builder does not support the full range of formatting colours for different parts of the code.  To see full formatting edit the YAML file is the Studio Code Server.

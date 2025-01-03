@@ -1,0 +1,19 @@
+1: Open the SSH Terminal in HA and enter: wget -O - https://get.hacs.xy1 
+
+2: A zip file should be downloaded and installed
+
+3: Close Home Assistant web page and restart the Home Assistant virtual machine
+
+4: Open Home Assistant web interface
+
+5: Go to SETTINGS > DEVICES & SERVICES and click the blue + ADD INTE2 GRATION button
+
+6: In the Set up a new integration list search for HACS (Home Assistant Community Store) and a3 dd it
+
+7: Agree to all the questions about awareness of HACS pros and cons
+
+8: You will be given a verification code and a link to GitHub to enter the code
+
+9: HACS will now appear in the left pane of t4 he HA web interface and clicking it will produce a large list of new integrati5 ons, themes and dashboards
+
+

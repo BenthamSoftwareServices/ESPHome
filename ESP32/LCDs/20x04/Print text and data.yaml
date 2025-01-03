@@ -1,0 +1,24 @@
+# I²C configuration (pins depend on your ESP32 board, default GPIO21 and GPIO22)
+i2c:
+  scl: 8
+  sda: 7
+  scan: False # Set to true if I2C address not known
+  id: bus_a
+  # Set the frequency the I²C bus should operate on. Defaults to 50kHz. Values are 10kHz, 50kHz, 100kHz, 200kHz, … 800kHz
+  frequency: 25kHz # Higher frequencies avoid error message: Component display took a long time for an operation (204 ms). Components should block for at most 30 ms.
+  # Increase the allowable time for an I2C response if slave device has slow datasheet timing parameters; not the same as a functionally slow device.  Defaults to 50mS
+  timeout: 100ms     
+
+display:
+  # LCD Display configuration
+  - platform: lcd_pcf8574
+    dimensions: 20x4 # Layout of character display e.g. 10x2 or 20x4
+    update_interval: 2s # How often the display is updated
+    address: 0x27  # I2C address (commonly 0x27 or 0x3F; adjust if needed)
+    id: my_lcd
+    # C++ code to write data to the display
+    lambda: |-
+      it.printf(0, 0, "Voltage:      %.2fV", id(measured_voltage).state);
+      it.printf(0, 1, "Temperature: %.2fC", id(dht11_temperature).state);
+      it.printf(0, 2, "Humidity:    %.2f%%", id(dht11_humidity).state);
+      it.printf(0, 3, "Hello");

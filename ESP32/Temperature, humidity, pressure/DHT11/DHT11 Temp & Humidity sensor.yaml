@@ -1,0 +1,13 @@
+# Include all sensor devices in the single sensor: domain
+# DHT11 Temperature + Humidity Sensor
+# The DHT11 requires external pull up resistors on the data line. To do this, solder a resistor with about 4.7kΩ between DATA and 3.3V.
+  - platform: dht
+    model: DHT11
+    pin: GPIO4
+    temperature:
+      id: dht11_temperature
+      name: "Work Room Temperature"
+    humidity:
+      id: dht11_humidity
+      name: "Work Room Humidity"
+    update_interval: 60s

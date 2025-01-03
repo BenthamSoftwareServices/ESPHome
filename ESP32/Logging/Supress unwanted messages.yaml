@@ -1,0 +1,32 @@
+# Some components such as LCD displays take longer than ESPHome thinks is OK and will produce messages as below:
+
+#     [17:08:26][W][component:237]: Component display took a long time for an operation (493 ms).
+#     [17:08:26][W][component:238]: Components should block for at most 30 ms.
+
+# The letter after the timestamp indicates the level of the message, in this case [W] for warning
+# Sometimes increasing the frequency of the I2C bus, anything up to 800KHz, will eliminate the warnings; but if not they can be suppressed.  
+# It is not currently possible to suppress warnings for a specific component, but only for all components, which may be acceptable.
+
+# In the logger section of the yaml code the overall message level can be configured and in addition for a specific item
+
+# Enable logging
+logger:
+  level: DEBUG # sets the overall logging level, which if not specified defaults to DEBUG
+  logs: 
+    component: ERROR # sets the logging level for a specific item, in this case all components
+    
+# Logging options are:
+
+# NONE No messages are logged.
+
+# ERROR With this log level, only errors are logged. Errors are issues that prevent the ESP from working correctly. Color: red
+
+# WARN With this log level, warnings and errors are logged. Warnings are issues like invalid readings from sensors that ESPHome can recover from. Color: yellow
+
+# INFO With this log level, everything up to info messages are logged; so errors, warnings and info. Color: green
+
+# DEBUG (Default) Everything up to this log level is logged. Debug messages include the current readings from a sensor and status messages. Color: cyan
+
+# VERBOSE Like debug, but a few more messages that are usually deemed to be spam are also included. Color: grey
+
+# VERY_VERBOSE All internal messages are logged. Including all the data flowing through data buses like I²C, SPI or UART. Warning: May cause the device to slow down and have trouble staying connecting due to amount of generated messages. Color: white
